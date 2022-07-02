@@ -1,3 +1,4 @@
+import { LayoutProps } from '@interfaces'
 import * as React from 'react'
 import AdminFooter from './footer'
 import AdminHeader from './header'
