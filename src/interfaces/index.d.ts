@@ -12,3 +12,18 @@ type PageWithLayout = NextPage & {
 type AppPropsWithLayout = AppProps & {
   Component: PageWithLayout
 }
+
+interface Pagination {
+  page: string
+  limit: string
+}
+
+interface Post {
+  id: string
+  title: string
+  description: string
+  createdAt: string
+  updatedAt: string
+  imageUrl: string
+  author: string
+}

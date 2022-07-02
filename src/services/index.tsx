@@ -1,1 +1,1 @@
-export {}
+export * as postService from './post'
