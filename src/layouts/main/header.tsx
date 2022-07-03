@@ -1,9 +1,9 @@
+import { useAuth } from '@hooks'
 import Link from 'next/link'
-import * as React from 'react'
 
-export interface HeaderProps {}
+export default function Header() {
+  let { profile, logout } = useAuth()
 
-export default function Header(props: HeaderProps) {
   return (
     <header className="header">
       <ul style={{}}>
@@ -18,8 +18,20 @@ export default function Header(props: HeaderProps) {
         <li>
           <Link href="/profile">Profile</Link>
         </li>
-        <li>Login</li>
-        <li>Logout</li>
+        {profile ? (
+          <>
+            <li>
+              <Link href="/profile">{profile.username}</Link>
+            </li>
+            <li>
+              <button onClick={logout}>Logout</button>
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link href="/login">Login</Link>
+          </li>
+        )}
       </ul>
     </header>
   )

@@ -18,8 +18,10 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@components": ["components"],
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
+      "@constants": ["constants"],
       "@constants/*": ["constants/*"],
       "@layouts": ["layouts"],
       "@pages/*": ["pages/*"],

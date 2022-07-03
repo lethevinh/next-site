@@ -1,5 +1,5 @@
-import { Pagination, Post } from '@interfaces'
-import client from './client'
+import { Post } from '@interfaces'
+import client from './client-api'
 
 interface PostsResponse {
   posts: Post[]

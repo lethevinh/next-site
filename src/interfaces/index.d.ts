@@ -27,3 +27,13 @@ interface Post {
   imageUrl: string
   author: string
 }
+
+interface User {
+  username: string
+  email: string
+}
+
+interface PayloadLogin {
+  username: string
+  password: string
+}

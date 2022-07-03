@@ -1,3 +1,4 @@
+import { TIME_VALIDATE_POST } from '@constants'
 import { Post } from '@interfaces'
 import { MainLayout } from '@layouts'
 import { postService } from '@services'
@@ -50,7 +51,7 @@ export const getStaticProps = async ({ params }: { params: PostDetailParams }) =
   return {
     props: {
       post,
-      revalidate: 300,
+      revalidate: TIME_VALIDATE_POST,
     },
   }
 }

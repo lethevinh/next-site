@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import client from 'services/client'
+import client from 'services/client-api'
 
 export const useRequest = (url: string) => {
   const [data, setData] = useState(null)
