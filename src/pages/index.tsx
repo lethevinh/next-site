@@ -14,7 +14,7 @@ const App: PageWithLayout = () => {
             'https://cdn.getshifter.co/caa65008efb706a8bfc6f7e4045d6a018420c3df/uploads/2020/11/nextjs.png',
         }}
       />
-      <h1 style={{ textAlign: 'center' }}>Wellcome to Next Site</h1>
+      <h1 className=" text-tahiti text-center">Wellcome to Next Site</h1>
     </div>
   )
 }
