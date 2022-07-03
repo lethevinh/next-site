@@ -34,5 +34,6 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
     login,
     logout,
     firstLoading,
+    mutate,
   }
 }

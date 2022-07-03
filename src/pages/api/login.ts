@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import httpProxy, { ProxyResCallback } from 'http-proxy'
 import Cookies from 'cookies'
+import { KEY_ACCESS_TOKEN } from '@constants'
 
 type Data = {
   message: string
@@ -35,7 +36,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
           // convert token to cookies
           const cookies = new Cookies(req, res, { secure: process.env.NODE_ENV !== 'development' })
-          cookies.set('access_token', accessToken, {
+          cookies.set(KEY_ACCESS_TOKEN, accessToken, {
             httpOnly: true,
             sameSite: 'lax',
             expires: new Date(expiredAt),

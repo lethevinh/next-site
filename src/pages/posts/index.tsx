@@ -1,3 +1,4 @@
+import SEO from '@components/seo'
 import { useLoading } from '@hooks'
 import { Post } from '@interfaces'
 import { MainLayout } from '@layouts'
@@ -33,6 +34,15 @@ function PostPage({ posts }: PostPageProps) {
 
   return (
     <div>
+      <SEO
+        data={{
+          title: 'Blog',
+          description: 'Blog Page',
+          url: 'https://next-site-brown-delta.vercel.app/posts',
+          thumbnailUrl:
+            'https://cdn.getshifter.co/caa65008efb706a8bfc6f7e4045d6a018420c3df/uploads/2020/11/nextjs.png',
+        }}
+      />
       <h1>Post Page</h1>
       {posts &&
         posts.map((post: Post) => (

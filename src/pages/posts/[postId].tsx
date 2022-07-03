@@ -1,3 +1,4 @@
+import SEO from '@components/seo'
 import { TIME_VALIDATE_POST } from '@constants'
 import { Post } from '@interfaces'
 import { MainLayout } from '@layouts'
@@ -21,6 +22,14 @@ function PostDetail({ post }: PostDetailProps) {
   }
   return (
     <div style={{ fontSize: '2rem', textAlign: 'center' }}>
+      <SEO
+        data={{
+          title: post.title,
+          description: post.description,
+          url: `https://next-site-brown-delta.vercel.app/posts/${post.id}`,
+          thumbnailUrl: post.imageUrl,
+        }}
+      />
       <h1>Post Detail</h1>
       <h2>{post.title}</h2>
       <p>{post.description}</p>

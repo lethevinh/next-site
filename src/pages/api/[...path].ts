@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import httpProxy from 'http-proxy'
 import Cookies from 'cookies'
+import { KEY_ACCESS_TOKEN } from '@constants'
 
 export const config = {
   api: {
@@ -13,7 +14,7 @@ const proxy = httpProxy.createProxyServer()
 export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   return new Promise((resolve) => {
     const cookies = new Cookies(req, res)
-    const accessToken = cookies.get('access_token')
+    const accessToken = cookies.get(KEY_ACCESS_TOKEN)
     if (accessToken) {
       req.headers.Authorization = `Bearer ${accessToken}`
     }
